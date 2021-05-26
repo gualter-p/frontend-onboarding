@@ -1,0 +1,40 @@
+* {
+    font-family: Verdana;
+    font-size: 14px;
+    color: #635d5da9;
+}
+
+body {
+    height: 850px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+h6, a {
+    color: #f69526;
+}
+
+h2 {
+    font-size: 24px;
+    color: #0e0d0d;
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.navbar > * {
+    margin: 7px; 
+}
+
+.heading {
+    color: #cccccc;
+    font-size: 25px;
+}
+
+.reg_avail {
+    background-color: #cccccc;
+    padding: 25px;
+}
