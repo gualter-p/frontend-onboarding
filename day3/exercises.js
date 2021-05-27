@@ -2,34 +2,20 @@ console.log('Runtime\'s frontend onboarding')
 
 // 1. Create a function to get the integers in range (x, y)
 const getIntegers = (x, y) => {
-    if (x >= y) return [];
-
-    var res = [];
-    for (let i = x; i <= y; i++)
-        res.push(i)
-    return res;
-}
-
-const getIntegersES6 = (x, y) => {
     return [...Array(y - x + 1).keys()].map(i => i + x);
 }
 
 console.log(getIntegers(3,7))
-console.log(getIntegersES6(3,7))
 
 // 2. Create a function that will move a value of an array to the end of the same array
 const moveToEnd = (arr, v) => {
     if (arr == null || arr.length == 0) return [];
-    if (!arr.includes(v)) return arr;
+    if (!arr.includes(v)) return [];
 
     const vIndex = arr.indexOf(v); // Where v is
-    const toIndex = arr.length-1; // Where v will be
-    const buffer = arr[toIndex]; // Buffer storing arr's last value
+    arr.push(arr.splice(vIndex, 1)[0]); // Removing v, retrieving it (result_from_splice[0]), and pushing it to the end
 
-    arr[toIndex] = v;
-    arr[vIndex] = buffer;
-
-    return arr;
+    return arr
 }
 
 console.log(moveToEnd([1,2,6,4], 6))
@@ -106,7 +92,7 @@ const capitalizeWords = s => {
     if(s == null) return "String is null."
     if(s === "") return "String is empty."
 
-    return s.toLowerCase().split(" ").map( w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    return s.split(" ").map( w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 console.log(capitalizeWords("onboarding runtime"))
