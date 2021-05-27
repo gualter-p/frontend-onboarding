@@ -3,9 +3,7 @@
 const obj1= {a: 1, b:2}
 const obj2= {c: 3, d:4}
 
-const mergeObj = (o1, o2) => {
-    return {...o1, ...o2}
-}
+const mergeObj = (o1, o2) => ({...o1, ...o2})
 
 console.log(mergeObj(obj1,obj2))
 
@@ -20,9 +18,7 @@ const oArr = [
     {number: 5, name: "Mark"}
 ]
 
-const filterNoName = (oArr) => {
-    return oArr.filter( o => o.name == null )
-}
+const filterNoName = (oArr) =>  oArr.filter( o => o.name == null )
 
 console.log(filterNoName(oArr))
 
@@ -46,15 +42,14 @@ const o4 = {
                       }
             }
 
-const changeProperties = (o4, newName, newStreet) => {
-    return Object.assign(o4, {
+const changeProperties = (o4, newName, newStreet) => 
+    Object.assign(o4, {
         name: newName,
         address: {
             ...o4.address,
             street: newStreet
         }
     })
-}
 
 console.log(changeProperties(o4, "Mark", "alecrim"))
 
@@ -73,9 +68,7 @@ console.log(deleteProperty(o5, "c"))
 
 const o6 = {a:1, b:2, c:3, d:4} 
 
-const getValues = o => {
-    return Object.values(o)
-}
+const getValues = o => Object.values(o)
 
 console.log(getValues(o6))
 
@@ -83,9 +76,7 @@ console.log(getValues(o6))
 
 const o7 = {a:1, b:2, c:3, d:4} 
 
-const getObjectAsList = o => {
-    return Object.entries(o)
-}
+const getObjectAsList = o => Object.entries(o)
 
 console.log(getObjectAsList(o6))
 
@@ -108,9 +99,7 @@ console.log(switchValuesKeys(o8))
 
 const o9 = {a:1, b:2, c:3, d:4} 
 
-const checkProperty = (o, p) => {
-    return o.hasOwnProperty(p)
-}
+const checkProperty = (o, p) => o.hasOwnProperty(p)
 
 console.log(checkProperty(o9, "c"))
 console.log(checkProperty(o9, "e"))
@@ -133,9 +122,7 @@ console.log(getFirstN([7, 9, 0, -2],-3))
 
 myColor = ["Red", "Green", "White", "Black"];
 
-const joinToString = arr => {
-    return arr.join(",")
-}
+const joinToString = arr => arr.join(",")
 
 console.log(joinToString(myColor))
 
@@ -162,7 +149,6 @@ console.log(dashEven(224568))
 // 13: Write a JavaScript script to find the most frequent item of an array
 
 const a13 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-
 
 const getMostFrequent = arr => {
     var frequencies = [];
