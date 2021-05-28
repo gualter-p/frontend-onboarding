@@ -175,21 +175,23 @@ const array1_14 = [1,0,2,3,4];
 const array2_14 = [3,5,6,7,8,13];
 
 const sumArrays = (arr1, arr2) => {
-
-    var sumIndex = 0;
-
     // Sum matching indexes
-    var sum = arr1.map( (num, i) => {
-        sumIndex++
-        return num + arr2[i];
-    });
+    //var sum = arr1.map( num => {
+      //  return num + arr2[sumIndex++];
+    //});
+
+    var sum = []
+    // Need to make sure sumIndex < arr1/2.length
+    for(var sumIndex = 0; sumIndex < arr1.length && sumIndex < arr2.length; sumIndex++) { 
+        sum.push(arr1[sumIndex] + arr2[sumIndex]);
+    }
 
     // Sum exceeding indexes
     if (sumIndex === arr1.length) 
-        for (x = sumIndex; x < arr2.length; x++)   
+        for (let x = sumIndex; x < arr2.length; x++)   
             sum.push(arr2[x]);        
     else 
-        for (x = sumIndex; x < arr1.length; x++) 
+        for (let x = sumIndex; x < arr1.length; x++) 
             sum.push(arr1[x]);
         
     return sum;
@@ -211,8 +213,18 @@ console.log(mergeArrays(array1_15, array2_15))
 const arr16 = [1,2,3,5,3,5,6,7,8]
 
 const remoDuplicates = arr => [...new Set(arr)] // A set has no dups by definition
+// Won't work for older browser versions
+
+const remoDuplicatesAllBrowsers = arr => {
+    let res = []
+    arr.forEach(val => {
+        if(!res.includes(val)) res.push(val)
+    })
+    return res;
+}
 
 console.log(remoDuplicates(arr16))
+console.log(remoDuplicatesAllBrowsers(arr16))
 
 // 17. Create a function to find the difference of two arrays
 
@@ -242,8 +254,14 @@ const array1_19 = [1, 2, 3];
 const array2_19 = [2, 30, 1];
 
 const mergeArraysNoDups = (arr1, arr2) => [...new Set(arr1.concat(arr2))]
+// Won't work for older browsers
+
+const mergeArraysNoDupsAllBrowsers = (arr1, arr2) => (
+    remoDuplicatesAllBrowsers(arr1.concat(arr2))
+)
 
 console.log(mergeArraysNoDups(array1_19, array2_19))
+console.log(mergeArraysNoDupsAllBrowsers(array1_19, array2_19))
 
 // 20. Write a JavaScript function to remove a specific element from an array
 
