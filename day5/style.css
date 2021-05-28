@@ -1,0 +1,64 @@
+* {
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.form-fields {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: baseline;
+}
+
+.form-field-el {
+    display:flex;
+    align-items: baseline;
+    justify-content:center;
+}
+
+.form-label {
+    color: black;
+    font-weight: bold;
+}
+
+.form-input {
+    border: 1px solid lightblue;
+    border-radius: 4px;
+}
+
+.form-checkbox-field, .form-dropdown-field, .form-textbox-field, .form-input {
+    margin-left: 70px;
+    margin-bottom: 20px;
+}
+
+.success {
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox-options {
+    display: flex;
+    justify-content:left;
+}
+
+.checkbox-text {
+    border: 1px solid #cdcdcd;
+}
+
+.textbox {
+    width: 200px !important;
+    height: 30px;
+    border: 1px solid #cdcdcd;
+    background-color: white;
+    font-size: 16px;
+}
+
+.submit {
+    float: right;
+    margin-right: 160px;
+    background-color: rgb(196, 202, 204);
+    border: 1px solid lightblue;
+    border-radius: 4px;
+    padding: 10px;
+    width: 10%;
+    cursor: pointer;
+}

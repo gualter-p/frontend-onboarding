@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Runtime's Frontend Onboarding - Day 5</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2> Form </h2>
+        <hr> <br>
+        <div class="success" id="success"></div>
+        <form id="form">       
+            <div class="form-fields">
+                <div class="form-field-el">
+                    <label class="form-label" for="fname">First name<sup>*</sup></label>
+                    <div id="invalidfname"></div>
+                    <input class="form-input" type="text" id="fname" name="fname">
+                </div>
+                <div class="form-field-el">
+                    <label class="form-label" for="lname">Last name<sup>*</sup></label>
+                    <div id="invalidlname"></div>
+                    <input class="form-input" type="text" id="lname" name="lname">
+                </div>
+            </div>
+            <div class="form-fields">
+                <div class="form-field-el">
+                    <label class="form-label" for="eaddress">Email Address<sup>*</sup></label>
+                    <div id="invalideaddress"></div>
+                    <input class="form-input" type="text" id="eaddress" name="eaddress">
+                </div>      
+                <div class="form-field-el">
+                    <label class="form-label" for="pnumber">Phone Number<sup>*</sup></label>
+                    <div id="invalidpnumber"></div>
+                    <input class="form-input" type="text" id="pnumber" name="pnumber">
+                </div>
+            </div>         
+            <div class="form-checkbox-field">  
+                Do you agree to be contacted via text/SMS?<sup>*</sup>                      
+                <div id="invalidcheckbox"></div>
+                <div class="checkbox-options">
+                    <label  for="yes"> Yes</label><br>
+                    <input type="checkbox" id="checkyes" name="checkbox" value="Yes">   
+                    <label for="no"> No</label><br>     
+                    <input type="checkbox" id="checkno" name="checkbox" value="No">   
+                </div>
+            </div>
+            <div class="form-dropdown-field">             
+                <select id="subject" name="subject" onchange='showTextBox(this.value)'> <sup>*</sup>
+                    <option selected="selected"> Select the subject </option>
+                    <option value="none">None</option>
+                    <option value="techprobs">Technical problems</option>
+                    <option value="otherprobs">Other subject</option>
+                </select>   
+                <sup>*</sup>
+            </div>
+            <div class="form-textbox-field">
+                <div id="detailstbox" style="display:none;">
+                    Please explain the problem in detail: <p></p>
+                    <div id="invalidprobdetails"></div>
+                    <input type="text" name="probdetails" id="probdetails"/>
+                </div>                               
+            </div>
+            <input class="submit" type="submit" value="Sign Up">
+        </form>        
+    </body>
+    <script src="script.js"></script>
+</html>
