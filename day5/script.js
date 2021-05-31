@@ -28,14 +28,7 @@ form.addEventListener("submit", e => {
 
     e.preventDefault()
 
-    var success = true;   
-
-    success = checkFirstName(success);
-    success = checkLastName(success);
-    success = checkEmail(success);
-    success = checkPhoneNumber(success);
-    success = checkCheckBox(success);
-    success = checkProbDetails(success);
+    var success = validateForm()
 
     if(success) {
         formSuccess.innerHTML = FORM_SUCCESS;
@@ -43,7 +36,10 @@ form.addEventListener("submit", e => {
     }
 })
 
-const checkFirstName = (success) => {
+const validateForm = _ => {
+
+    var success = true;
+
     if(firstName.value === '') {
         invFirstName.innerHTML = REQUIRED
         firstName.style.borderColor = RED_BORDER
@@ -52,10 +48,7 @@ const checkFirstName = (success) => {
         invFirstName.innerHTML = NO_CONTENT
         firstName.style.borderColor = BLUE_BORDER
     }
-    return success
-}
 
-const checkLastName = (success) => {
     if(lastName.value === '') { 
         invLastName.innerHTML = REQUIRED
         lastName.style.borderColor = RED_BORDER
@@ -64,10 +57,7 @@ const checkLastName = (success) => {
         invLastName.innerHTML = NO_CONTENT
         lastName.style.borderColor = BLUE_BORDER
     }
-    return success
-}
-
-const checkEmail = (success) => {
+  
     if(email.value === '')  {
         invEmail.innerHTML = REQUIRED
         email.style.borderColor = RED_BORDER
@@ -80,10 +70,7 @@ const checkEmail = (success) => {
             email.style.borderColor = RED_BORDER
         }
     }  
-    return success  
-}
-
-const checkPhoneNumber = (success) => {
+ 
     if(phoneNumber.value === '') {
         invPhoneNumber.innerHTML = REQUIRED
         phoneNumber.style.borderColor = RED_BORDER
@@ -92,20 +79,14 @@ const checkPhoneNumber = (success) => {
         invPhoneNumber.innerHTML = NO_CONTENT
         phoneNumber.style.borderColor = BLUE_BORDER
     }
-    return success
-}
-
-const checkCheckBox = (success) => {
+ 
     if(!checkBoxYes.checked && !checkBoxNo.checked){
         invCheckBox.innerHTML = REQUIRED
         success = false
     } else {
         invCheckBox.innerHTML = NO_CONTENT
     } 
-    return success
-}
-
-const checkProbDetails = (success) => {
+ 
     if(probDetails.value === '') {
         invProbDetails.innerHTML = REQUIRED
         probDetails.style.borderColor = RED_BORDER
@@ -114,6 +95,7 @@ const checkProbDetails = (success) => {
         invProbDetails.innerHTML = NO_CONTENT
         probDetails.style.borderColor = BLUE_BORDER
     }
+
     return success
 }
 
