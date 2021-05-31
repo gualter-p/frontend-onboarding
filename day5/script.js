@@ -26,9 +26,9 @@ var invProbDetails = document.getElementById("invalidprobdetails")
 
 form.addEventListener("submit", e => {
 
-    e.preventDefault()
+    e.preventDefault();
 
-    var success = validateForm()
+    const success = validateForm();
 
     if(success) {
         formSuccess.innerHTML = FORM_SUCCESS;
@@ -96,7 +96,7 @@ const validateForm = _ => {
         probDetails.style.borderColor = BLUE_BORDER
     }
 
-    return success
+    return success;
 }
 
 const isEmailValid = email => {
