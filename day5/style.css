@@ -3,16 +3,20 @@
     font-size: 14px;
 }
 
+body {
+    margin-right: 80px;
+    margin-left: 60px;
+}
+
 .form-fields {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: baseline;
 }
 
-.form-field-el {
-    display:flex;
-    align-items: baseline;
-    justify-content:center;
+.form-fields-el {
+    display: grid;
+    justify-content: baseline;
 }
 
 .form-label {
@@ -26,13 +30,28 @@
 }
 
 .form-checkbox-field, .form-dropdown-field, .form-textbox-field, .form-input {
-    margin-left: 70px;
+    margin-left: 192px;
     margin-bottom: 20px;
+}
+
+.el-input {
+    display: content;
+    align-items: left;;
+    justify-content: left;
+}
+
+.error-message {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-style: italic;
+    font-size: 8;
 }
 
 .success {
     display: flex;
     justify-content: center;
+    margin-bottom:15px;
+    font-size: 20px;
 }
 
 .checkbox-options {
@@ -45,16 +64,16 @@
 }
 
 .textbox {
-    width: 200px !important;
-    height: 30px;
+    width: 400px;
+    height: 80px;
     border: 1px solid #cdcdcd;
     background-color: white;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .submit {
     float: right;
-    margin-right: 160px;
+    margin-right: 195px;
     background-color: rgb(196, 202, 204);
     border: 1px solid lightblue;
     border-radius: 4px;

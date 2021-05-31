@@ -1,8 +1,11 @@
-var form = document.getElementById("form")
-
 const REQUIRED = "This field is required"
 const INVALID_EMAIL = "Invalid email."
-const NO_ERROR = ""
+const NO_CONTENT = ""
+const FORM_SUCCESS = "Form submitted with success."
+const RED_BORDER = "red"
+const BLUE_BORDER = "lightblue"
+
+var form = document.getElementById("form")
 
 var firstName = document.getElementById("fname")
 var lastName = document.getElementById("lname")
@@ -25,75 +28,93 @@ form.addEventListener("submit", e => {
 
     e.preventDefault()
 
-    var success = true;
+    var success = true;   
 
+    success = checkFirstName(success);
+    success = checkLastName(success);
+    success = checkEmail(success);
+    success = checkPhoneNumber(success);
+    success = checkCheckBox(success);
+    success = checkProbDetails(success);
+
+    if(success) {
+        formSuccess.innerHTML = FORM_SUCCESS;
+        form.reset();
+    }
+})
+
+const checkFirstName = (success) => {
     if(firstName.value === '') {
         invFirstName.innerHTML = REQUIRED
-        firstName.style.borderColor = "red"
+        firstName.style.borderColor = RED_BORDER
         success = false
     } else {
-        invFirstName.innerHTML = NO_ERROR
-        firstName.style.borderColor = "lightblue"
+        invFirstName.innerHTML = NO_CONTENT
+        firstName.style.borderColor = BLUE_BORDER
     }
+    return success
+}
 
+const checkLastName = (success) => {
     if(lastName.value === '') { 
         invLastName.innerHTML = REQUIRED
-        lastName.style.borderColor = "red"
+        lastName.style.borderColor = RED_BORDER
         success = false
     } else {
-        invLastName.innerHTML = NO_ERROR
-        lastName.style.borderColor = "lightblue"
+        invLastName.innerHTML = NO_CONTENT
+        lastName.style.borderColor = BLUE_BORDER
     }
+    return success
+}
 
+const checkEmail = (success) => {
     if(email.value === '')  {
         invEmail.innerHTML = REQUIRED
-        email.style.borderColor = "red"
+        email.style.borderColor = RED_BORDER
         success = false
     } else {
-        invEmail.innerHTML = NO_ERROR
-        email.style.borderColor = "lightblue"
+        invEmail.innerHTML = NO_CONTENT
+        email.style.borderColor = BLUE_BORDER
         if(!isEmailValid(email.value)){
             invEmail.innerHTML = INVALID_EMAIL 
-            email.style.borderColor = "red" 
+            email.style.borderColor = RED_BORDER
         }
-    }    
-       
+    }  
+    return success  
+}
+
+const checkPhoneNumber = (success) => {
     if(phoneNumber.value === '') {
         invPhoneNumber.innerHTML = REQUIRED
-        phoneNumber.style.borderColor = "red"
+        phoneNumber.style.borderColor = RED_BORDER
         success = false
     } else {
-        invPhoneNumber.innerHTML = NO_ERROR
-        phoneNumber.style.borderColor = "lightblue"
+        invPhoneNumber.innerHTML = NO_CONTENT
+        phoneNumber.style.borderColor = BLUE_BORDER
     }
+    return success
+}
 
+const checkCheckBox = (success) => {
     if(!checkBoxYes.checked && !checkBoxNo.checked){
         invCheckBox.innerHTML = REQUIRED
         success = false
     } else {
-        invCheckBox.innerHTML = NO_ERROR
+        invCheckBox.innerHTML = NO_CONTENT
     } 
-     
+    return success
+}
+
+const checkProbDetails = (success) => {
     if(probDetails.value === '') {
         invProbDetails.innerHTML = REQUIRED
-        probDetails.style.borderColor = "red"
+        probDetails.style.borderColor = RED_BORDER
         success = false
     } else {
-        invProbDetails.innerHTML = NO_ERROR
-        probDetails.style.borderColor = "lightblue"
+        invProbDetails.innerHTML = NO_CONTENT
+        probDetails.style.borderColor = BLUE_BORDER
     }
-    // In case we have a valid form
-    if(success) {
-        probDetailsBox.style.display = "none"
-        formSuccess.innerHTML = "Form submitted with success."
-    }
-})
-
-const clearErrors = _ => {
-    document.querySelectorAll('[id^="invalid"]').forEach( el => {
-        console.log(el)
-        el.style.display = "none"
-    })
+    return success
 }
 
 const isEmailValid = email => {
