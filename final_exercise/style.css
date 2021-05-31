@@ -1,0 +1,86 @@
+:root {
+    --default-font-color:  #7c7c7c;
+    --border-color: #F1F1F1;
+    --primary-color: #404980;
+    --secondary-color: #31ceb2;
+    --button-hover: #33b59f;
+}
+
+/* Navbar */
+
+nav {
+    padding: 0.5em;
+    margin-right: 10em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li :hover {
+    color: var(--secondary-color);
+    transition: 0.2s;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+    margin-left: 10em;
+}
+
+nav ul li:last-child {
+    background-color: var(--secondary-color);
+    border-radius: 0.5em;
+    border-color: var(--border-color);
+    border: 1em;
+}
+
+nav ul li:last-child :hover {
+    color: white;
+    border-radius: 0.5em;
+    background-color: var(--button-hover);
+    transition: 0.2s;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    display: block;
+    line-height: 2em;
+    padding: 0.2em 1.5em;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero-image {   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://placekitten.com/500/600"); 
+    height: 600px;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text-background {
+    background-color: lightslategray;
+    width: 100%;
+    position: static;
+}
+
+.hero-text {    
+    text-align: left;
+    position: absolute;
+    margin-left: 10em;
+    top: 75%;
+    color: white;
+  }
+
+
+
+
