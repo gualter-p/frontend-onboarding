@@ -4,13 +4,19 @@
     --primary-color: #404980;
     --secondary-color: #31ceb2;
     --button-hover: #33b59f;
+    --shadow-color: rgba(#737373, 0.5);
+}
+
+* {
+    font-family: Verdana;
 }
 
 /* Navbar */
 
 nav {
-    padding: 0.5em;
+    padding: 1em;
     margin-right: 10em;
+    margin-bottom: 0.5em;
 }
 
 nav ul {
@@ -59,28 +65,127 @@ nav ul li a {
 
 /* Hero */
 .hero-image {   
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://placekitten.com/500/600"); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://placekitten.com/600/600"); 
     height: 600px;  
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
 
-.hero-text-background {
-    background-color: lightslategray;
+.hero-text {    
     width: 100%;
-    position: static;
+    background-color: black;
+    opacity: 0.7;
+    text-align: left;
+    text-indent: 2em;
+    position: absolute;
+    bottom: 0;
+    color: white;
 }
 
-.hero-text {    
-    text-align: left;
-    position: absolute;
-    margin-left: 10em;
-    top: 75%;
-    color: white;
-  }
+/* Flag */
 
+.flag-right {
+    background-color:var(--primary-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flag-right img {
+    height: 100%;
+}
+
+.flag-right h2, li {
+    color: white;
+}
+
+.flag-right button, .flag-left button {
+    padding: 1em 1.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: var(--secondary-color);
+    border-radius: 0.5em;
+    border-color: var(--border-color);
+    border: 1em;
+    margin-top: 0.8em;
+}
+
+.flag-right button :hover {
+    color: white;
+    border-radius: 0.5em;
+    background-color: var(--button-hover);
+    transition: 0.2s;
+}
+
+
+.flag-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Title */
+
+.title {
+    color: var(--primary-color);
+}
+
+/* Pre card */
+
+.pre-card {
+    margin-top: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* Card */
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card img {
+    height: 250px;
+}
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.card-el {
+    padding: 2px 16px;
+}
+
+.card-el p {
+    font-style: italic;
+}
+
+.card-el hr {
+    border: none;
+    height: 0.1em;
+    background-color: linen;
+}
+
+/* Footer */
+.footer {
+    background-color: rgb(40, 41, 39);
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
 
 
 
