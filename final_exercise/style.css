@@ -27,8 +27,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
-    list-style-type: none;
+    display: flex;
 }
 
 nav ul li :hover {
@@ -41,18 +40,22 @@ nav ul li:first-child {
     margin-left: 10em;
 }
 
-nav ul li:last-child {
+nav button {
+    display: flex;
+    color: var(--primary-color);
+    font-size: 14px;
     background-color: var(--secondary-color);
     border-radius: 0.5em;
     border-color: var(--border-color);
     border: 1em;
+    padding: 0.8em 1.4em;
 }
 
-nav ul li:last-child :hover {
+nav button:hover {
     color: white;
-    border-radius: 0.5em;
     background-color: var(--button-hover);
     transition: 0.2s;
+    cursor: pointer;
 }
 
 nav ul li a {
@@ -63,6 +66,21 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li .menu {
+    display: none;    
+}
+
+@media screen and (max-width: 991px) {
+    nav ul li:not(:first-child) {display: none;}
+    nav ul li:nth-child(4) {display: flex;}
+    nav ul button {display: none;}
+    nav ul .menu {
+      display: flex !important;
+      color: var(--primary-color);
+
+    }
+}
+
 /* Hero */
 .hero-image {   
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://placekitten.com/600/600"); 
@@ -70,6 +88,8 @@ nav ul li a {
     background-position: center;
     background-size: cover;
     position: relative;
+    display:flex;
+    flex-flow: column;
 }
 
 .hero-text {    
